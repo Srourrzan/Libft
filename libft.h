@@ -6,17 +6,19 @@
 /*   By: rsrour <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 21:33:54 by rsrour            #+#    #+#             */
-/*   Updated: 2024/09/05 21:13:30 by rsrour           ###   ########.fr       */
+/*   Updated: 2024/09/07 12:58:03 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
-
+# define LIBFT_H
+#include <stddef.h>
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
 #include <ctype.h>
 #include <stdlib.h>
 
+char    *ft_strdup(const char *s1);
 char	ft_toupper(char c);
 char	ft_tolower(char c);
 int	ft_isalpha(int c);
@@ -41,6 +43,6 @@ void    ft_putnbr_fd(int n, int fd);
 void    ft_striteri(char *s, void (*f)(unsigned int, char*));
 void    ft_putendl_fd(char *s, int fd);
 char    *ft_substr(char const *s, unsigned int start, size_t len);
-char    *ft_strdup(const char *s1);
+
 
 #endif

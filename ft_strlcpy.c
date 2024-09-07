@@ -37,16 +37,29 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[iter] = '\0';
 	return (length);
 }
-/*
+
 int	main()
 {
 	const char	*src = "Srour";
-	char		dest[6];
+	char		dest[5];
+	size_t		len_dest = ft_strlcpy(dest, src, 5);
+	size_t		iter = 0;
 
-	if (ft_strlcpy(dest, src, 6) >= sizeof(src))
+	if (len_dest >= sizeof(src))
 		printf("Error: destination buffer too small, sizeof(src) = %ld\n", sizeof(src));
 	else
+	{
 		printf("dest = %s\n", dest);
+		printf("len_dest = %ld\n", len_dest);
+		if (dest[5] == '\0')
+			printf("True\n");
+		while(dest[iter] != '\0')
+		{
+			printf("dest[%ld] = %c\n", iter, dest[iter]);
+			iter++;
+		}
+		printf("dest[%ld] = %c\n", iter, dest[iter]);
+	}
 
 	return (0);
-}*/
+}
