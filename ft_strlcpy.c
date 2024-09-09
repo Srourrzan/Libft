@@ -12,37 +12,39 @@
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+size_t   ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t		iter;
-	size_t		length;
-	const char	*buffer;
+        size_t          iter;
+        size_t          length;
+        const char      *buffer;
 
-	iter = 0;
-	length = 0;
-	buffer = src;
-	if (!src)
-		return (0);
-	while (buffer[iter] != '\0')
-		iter++;
-	length = iter;
-	if (size == 0)
-		return (length);
-	iter = 0;
-	while (iter < length && iter < (size - 1))
-	{
-		dst[iter] = buffer[iter];
-		iter++;
-	}
-	dst[iter] = '\0';
-	return (length);
+        iter = 0;
+        buffer = src;
+        length = ft_strlen(buffer);
+        if (!src) // if the src is null then return the length of the src which is 0
+                return (0);
+        if (size == 0) //if the required size to opy from src is 0, then return the length of src
+                return (length);
+        while (iter < length && iter < (size - 1)) // size - 1 for null terminator
+        {
+                dst[iter] = buffer[iter];
+                iter++;
+        }
+        dst[iter] = '\0';
+//        printf("iter = %ld\n", iter);
+//        printf("length = %ld\n", length);
+//        printf("size = %ld\n", size);
+//        printf("buffer = %s\n", buffer);
+//        printf("dst = %s\n", dst);
+        return length;
 }
 
+/*
 int	main()
 {
 	const char	*src = "Srour";
-	char		dest[5];
-	size_t		len_dest = ft_strlcpy(dest, src, 5);
+	char		dest[6];
+	size_t		len_dest = ft_strlcpy(dest, src, 6);
 	size_t		iter = 0;
 
 	if (len_dest >= sizeof(src))
@@ -62,4 +64,4 @@ int	main()
 	}
 
 	return (0);
-}
+}*/
