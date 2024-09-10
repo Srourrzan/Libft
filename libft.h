@@ -6,7 +6,7 @@
 /*   By: rsrour <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 21:33:54 by rsrour            #+#    #+#             */
-/*   Updated: 2024/09/09 20:52:30 by rsrour           ###   ########.fr       */
+/*   Updated: 2024/09/10 20:38:42 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -45,6 +45,10 @@ void    ft_striteri(char *s, void (*f)(unsigned int, char*));
 void    ft_putendl_fd(char *s, int fd);
 char    *ft_substr(char const *s, unsigned int start, size_t len);
 char    *ft_strjoin(char const *s1, char const *s2);
-
+void	*ft_calloc(size_t count, size_t size);
+int	ft_atoi(const char *str);
+char	*ft_strnstr(const char *s, const char *need, size_t len);
+char	*ft_strtrim(char const *s1, char const *set);
+char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 #endif

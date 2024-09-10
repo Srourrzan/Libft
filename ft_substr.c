@@ -6,7 +6,7 @@
 /*   By: rsrour <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 15:47:17 by rsrour            #+#    #+#             */
-/*   Updated: 2024/09/05 19:55:06 by rsrour           ###   ########.fr       */
+/*   Updated: 2024/09/10 18:49:30 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substr = (char *)malloc(sizeof(char) * (len + 1));
 	//If the memory allocation fails return NULL
 	if (!substr)
-		return (NULL);
+	return (NULL);
 //	ft_strlcpy(substr, s, substr_len); // using ft_strlcpy to copy a size of substr_len from s to substr
 	ft_memcpy(substr, s + start, substr_len); // using ft_memcpy to copy substr_len bytes from memory src to memory dest
 	return (substr);
 	
 }
-
+/*
 int	main()
 {
 	char		*name = "Razan Srour";
@@ -51,4 +51,4 @@ int	main()
 	printf("The substring of %s starting from %d of length %ld\n", name, start, size_of_name);
 	printf("is: %s\n", ft_substr(name, start, size_of_name));
 	return (0);
-}
+}*/

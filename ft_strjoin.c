@@ -6,7 +6,7 @@
 /*   By: rsrour <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 19:55:36 by rsrour            #+#    #+#             */
-/*   Updated: 2024/09/09 20:52:05 by rsrour           ###   ########.fr       */
+/*   Updated: 2024/09/10 14:54:16 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcat(dest, s2, len1 + len2 + 1);
 	return (dest);
 }
-*/
+
 int	main()
 {
 	char	name1[] = "Razan";
@@ -72,4 +72,4 @@ int	main()
 	printf("The join of %s and %s is %s\n", name1, name2, ft_strjoin(name1, name2));
 	return (0);
 }
-
+*/
