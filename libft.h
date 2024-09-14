@@ -50,5 +50,6 @@ int	ft_atoi(const char *str);
 char	*ft_strnstr(const char *s, const char *need, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
 char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char    *ft_itoa(int n);
 
 #endif

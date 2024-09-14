@@ -26,7 +26,10 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	iter = 0;
 	while (buffer[iter] != '\0')
 	{
-		buffer['\0'] = f(iter, buffer[iter]);
+//		printf("Looping through the source buffer..\n");
+//		printf("passing iter %ld and buffer[%ld] %c to the function..\n", iter, iter, buffer[iter]);
+		buffer[iter] = f(iter, buffer[iter]);
+//		printf("The value of buffer[%ld] is now: %c\n", iter, buffer[iter]);
 		iter++;
 	}
 	buffer[iter++] = '\0';
@@ -40,8 +43,10 @@ static char	ft_add(unsigned int i, char c)
 
 int	main()
 {
-	char	*name = "Razan Srour";
-	char	*new_name = ft_strmapi(name, ft_add);
+	char	name[] = "LoRem iPsUm";
+	char	*new_name;
+		
+	new_name = ft_strmapi(name, ft_add);
 	printf("old name = %s\n", name);
 	printf("new_name = %s\n", new_name);
 
