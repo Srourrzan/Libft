@@ -18,9 +18,9 @@ void    ft_lstadd_back(t_list **lst, t_list *new)
         return ;
     }
     curr = *lst;
-    while (curr != NULL)
+    while (curr->next != NULL)
     {
-        printf("current node: %s\n", (char *)curr->content);
+        //printf("current node: %s\n", (char *)curr->content);
         curr = curr->next;
     }
     curr->next = new;
