@@ -6,7 +6,7 @@
 /*   By: rsrour <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 22:09:23 by rsrour            #+#    #+#             */
-/*   Updated: 2024/09/05 21:14:27 by rsrour           ###   ########.fr       */
+/*   Updated: 2024/09/14 10:36:08 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,4 @@ int	main()
 	
 	printf("The duplicate of %s is %s\n", name, ft_strdup(name));
 	return (0);
-}
-*/
+}*/
