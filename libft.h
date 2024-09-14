@@ -54,14 +54,12 @@ void    ft_putendl_fd(char *s, int fd);
 char    *ft_substr(char const *s, unsigned int start, size_t len);
 char    *ft_strjoin(char const *s1, char const *s2);
 void	*ft_calloc(size_t count, size_t size);
-int	ft_atoi(const char *str);
+int	    ft_atoi(const char *str);
 char	*ft_strnstr(const char *s, const char *need, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
 char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char    *ft_itoa(int n);
-<<<<<<< HEAD
-=======
 char	**ft_split(char const *s, char c);
->>>>>>> refs/remotes/origin/main
+t_list  *ft_lstnew(void *content);
 
 #endif
