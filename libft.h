@@ -19,6 +19,13 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+//Structures
+typedef struct      s_list
+{
+    void            *content; //void allows to store any kind of data
+    struct s_list   *next;
+}                   t_list;
+
 char    *ft_strdup(const char *s1);
 char	ft_toupper(char c);
 char	ft_tolower(char c);
