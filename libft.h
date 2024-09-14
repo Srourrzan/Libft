@@ -6,7 +6,7 @@
 /*   By: rsrour <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 21:33:54 by rsrour            #+#    #+#             */
-/*   Updated: 2024/09/10 20:38:42 by rsrour           ###   ########.fr       */
+/*   Updated: 2024/09/14 11:00:17 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -17,14 +17,15 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 char    *ft_strdup(const char *s1);
 char	ft_toupper(char c);
 char	ft_tolower(char c);
-int	ft_isalpha(int c);
-int	ft_isdigit(char c);
-int	ft_isalnum(char c);
-int	ft_isascii(int c);
+int     ft_isalpha(int c);
+int     ft_isdigit(char c);
+int     ft_isalnum(char c);
+int	    ft_isascii(int c);
 size_t	ft_strlen(const char *s);
 void	ft_memset(void *s, int c, size_t n);
 char    *ft_strchr(const char *src, int c);
@@ -51,5 +52,6 @@ char	*ft_strnstr(const char *s, const char *need, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
 char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char    *ft_itoa(int n);
+char	**ft_split(char const *s, char c);
 
 #endif
