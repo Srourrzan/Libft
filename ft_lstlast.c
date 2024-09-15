@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rsrour <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/15 21:41:10 by rsrour            #+#    #+#             */
+/*   Updated: 2024/09/15 21:41:36 by rsrour           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 /*
@@ -11,23 +23,18 @@ Description
 -----------
         Returns the last node of the list.
 */
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-    t_list      *last;
+	t_list		*last;
 
-    if (lst == NULL)
-        return;
-
-    //printf("Starting node: %s\n", (char *)lst->content);
-    while (lst)
-    {
-        last = lst;
-        lst = lst -> next;
-        // if (lst)
-    //        printf("Current node after moving one node: %s\n", (char *)lst->content);
-    //    printf("The value of last = %s\n", (char *)last->content);
-    }
-    return (last);
+	if (lst == NULL)
+		return (NULL);
+	while (lst)
+	{
+		last = lst;
+		lst = lst -> next;
+	}
+	return (last);
 }
 /*
 int     main()
@@ -39,8 +46,10 @@ int     main()
     ft_lstadd_back(&root, elem1);
     ft_lstadd_back(&root, elem2);
 
-    printf("NUmber of nodes in the list is %d\n", ft_lstsize(root));
+    printf("NUmber of nodes in the list is %d\n", 
+    ft_lstsize(root));
     t_list *last_element = ft_lstlast(root);
-    printf("The last node in the list is %s\n", (char *)last_element->content);
+    printf("The last node in the list is %s\n", 
+    (char *)last_element->content);
     return 42;
 }*/

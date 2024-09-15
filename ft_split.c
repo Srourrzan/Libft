@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -11,36 +9,10 @@
 /*   Updated: 2024/09/14 12:53:16 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
->>>>>>> refs/remotes/origin/main
 #include "libft.h"
 #include <stdlib.h>
 #include <stdbool.h>
 
-<<<<<<< HEAD
-
-static	size_t	count_words(char const *s, char delimeter)
-{
-	size_t	number_of_words;
-	bool	inside_a_word;
-
-	number_of_words = 0;
-	while (*s)
-	{
-		inside_a_word = false;
-		while (*s == delimeter && *S)
-			++s;
-	
-		while (*s != delimeter && *s)
-		{
-			if (!inside_a_word)
-			{
-				++number_of_words;
-				inside_a_word = true;
-			}
-		}
-	}
-	return number_of_words;
-=======
 size_t  ft_strlcpy(char *dst, const char *src, size_t size);
 
 static	int	ft_safe_malloc(char **words_vector, int current_position, size_t buffer_size)
@@ -113,37 +85,10 @@ static	size_t	ft_count_words(char const *sentence, char seperator)
 		}
 	}
 	return counter;
->>>>>>> refs/remotes/origin/main
 }
 
 char	**ft_split(char const *s, char c)
 {
-<<<<<<< HEAD
-	size_t	number_of_words;
-	char	**words_vector;
-
-	if (!s)
-		return NULL;
-	number_of_words = count_words(s, c);
-	words_vector = malloc(sizeof(char *) * (number_of_words + 1));
-	if (!words_vector)
-		return NULL;
-	words_vector[number_of_tokens] = '\0';
-
-}
-
-int	main()
-{
-	char	name[] = "RazanMSrour";
-	char	split_char = 'M';
-	char	split_str[][];
-
-	split_str = ft_split(name, split_char);
-	printf("The name %s have been split from %c into %s\n", name, split_char, split_str);
-
-	return (0);
-}
-=======
 	size_t		number_of_words;
 	char		**words_vector;
 	//size_t		iter;
@@ -176,4 +121,3 @@ int	main()
 
 }
 */
->>>>>>> refs/remotes/origin/main

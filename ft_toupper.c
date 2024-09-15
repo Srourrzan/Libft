@@ -20,9 +20,7 @@
 char	ft_toupper(char c)
 {
 	if ('a' <= c && 'z' >= c)
-	{
-		c =- 32;
-	}
+		return (c - ('a' - 'A'));
 	return c;
 }
 /*

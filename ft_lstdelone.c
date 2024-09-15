@@ -1,0 +1,72 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rsrour <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/15 21:35:06 by rsrour            #+#    #+#             */
+/*   Updated: 2024/09/15 21:36:37 by rsrour           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+/*
+Parameters
+----------
+        lst: The node to free.
+        del: The ddress of the function used to delete the content
+Return
+------
+        None
+Enternal Functions
+------------------
+        free
+Description
+-----------
+        Takes as a parameter a node and frees the memory of the
+        node's content using the function 'del' given as a parameter
+        and free the node. The memory of 'next' must not be freed.
+*/
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
+{
+	if (!lst || !del)
+		return ;
+	del(lst -> content);
+	free(lst);
+}
+/*
+void    del(void *content)
+{
+    printf("%s\n", (char*)content);
+    content = NULL;
+}
+
+int     main()
+{
+    t_list  *root = ft_lstnew("Razan");
+    t_list  *elem1 = ft_lstnew("Srour");
+    t_list  *elem2 = ft_lstnew("The");
+
+    ft_lstadd_back(&root, elem1);
+    ft_lstadd_back(&root, elem2);
+
+    t_list  *curr = root;
+    while(curr != NULL)
+    {
+        printf("%s\n", (char *)curr->content);
+        curr = curr->next;
+        printf("Here\n");
+    }
+
+    printf("The size of the list befor 
+    deleting the last node =  %d\n", ft_lstsize(root));
+    printf("deleting a node from the list....\n");
+    ft_lstdelone(elem2, del);
+    printf("The size of the list 
+    after deleting the last node =  %d\n", ft_lstsize(root));
+
+    return 42;
+}
+*/

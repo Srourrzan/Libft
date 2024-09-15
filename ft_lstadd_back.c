@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rsrour <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/15 21:22:56 by rsrour            #+#    #+#             */
+/*   Updated: 2024/09/15 21:29:07 by rsrour           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 /*
@@ -6,24 +18,23 @@ Parameters: lst: The address of a pointer to the first link of a list.
 
 Description: Adds the node `new` at the end of the list
 */
-void    ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-    t_list*     curr;
+	t_list*		curr;
 
-    if(!new)
-        return;
-    if (*lst == NULL)
-    {
-        *lst = new;
-        return ;
-    }
-    curr = *lst;
-    while (curr->next != NULL)
-    {
-        //printf("current node: %s\n", (char *)curr->content);
-        curr = curr->next;
-    }
-    curr->next = new;
+	if (!new)
+		return;
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	curr = *lst;
+	while (curr->next != NULL)
+	{
+		curr = curr->next;
+	}
+	curr->next = new;
 }
 /*
 int     main(void)
