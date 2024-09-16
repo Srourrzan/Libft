@@ -11,33 +11,22 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
-
-size_t  ft_strlen(const char *s);
-size_t  ft_strlcpy(char *dst, const char *src, size_t size);
-void    *ft_memcpy(void *dest, const void *src, size_t n);
-
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
 	size_t	substr_len;
 
-	printf("The length of the src str = %ld\n", ft_strlen(s));
+
 	substr_len = ft_strlen(s + start);
-	printf("The length of the substr = %ld\n", substr_len);
 	if (!s || !len || (start >= ft_strlen(s)))
 		return (NULL);
-	if (substr_len < len) // if the passed length (len) of the substring is shorter than the original lenght of the substring then assign len as substr_len `len=substr_len`
+	if (substr_len < len)
 		len = substr_len;
-	//Memory allocation
 	substr = (char *)malloc(sizeof(char) * (len + 1));
-	//If the memory allocation fails return NULL
 	if (!substr)
 	return (NULL);
-//	ft_strlcpy(substr, s, substr_len); // using ft_strlcpy to copy a size of substr_len from s to substr
-	ft_memcpy(substr, s + start, substr_len); // using ft_memcpy to copy substr_len bytes from memory src to memory dest
+	ft_strlcpy(substr, s, substr_len);
 	return (substr);
 	
 }

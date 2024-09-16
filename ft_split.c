@@ -10,10 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdlib.h>
-#include <stdbool.h>
-
-size_t  ft_strlcpy(char *dst, const char *src, size_t size);
 
 static	int	ft_safe_malloc(char **words_vector, int current_position, size_t buffer_size)
 {

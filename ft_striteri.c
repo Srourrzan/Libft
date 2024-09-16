@@ -26,14 +26,14 @@ void    ft_test(unsigned int i, char *str)
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	unsigned int		iter;
+	size_t		iter;
 
 	iter = 0;
 	if(!s || !f)
 		return ;
 	while(s[iter])
 	{
-		printf("s + %d = %s\n", iter, (s + iter));
+		//printf("s + %ld = %s\n", iter, (s + iter));
 		f(iter, (s+iter));
 		iter++;
 	}
