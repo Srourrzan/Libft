@@ -6,7 +6,7 @@
 /*   By: rsrour <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 17:22:09 by rsrour            #+#    #+#             */
-/*   Updated: 2024/09/03 17:40:06 by rsrour           ###   ########.fr       */
+/*   Updated: 2024/09/16 17:58:20 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@ void	ft_putstr_fd(char *s, int fd)
 	int	iter;
 
 	iter = 0;
-	if(!s || !fd)
+	if (!s || !fd)
 		return ;
-	while(s[iter] != '\0')
+	while (s[iter] != '\0')
 	{
 		write(fd, &s[iter], 1);
 		iter++;
 	}
 }
 /*
-int	main()
+int	main(void)
 {
 	char	*name = "Razan Srour";
 

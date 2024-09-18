@@ -15,16 +15,15 @@
 
 int	ft_isalnum(char c)
 {
-	if (('a' <= c && 'z' >= c) ||
-	   ('A' <= c && 'Z' >= c) ||
-	   ('0' <= c && '9' >= c))
+	if (('a' <= c && 'z' >= c) || ('A' <= c && 'Z' >= c) || ('0' <= c
+			&& '9' >= c))
 	{
-		return 8;
+		return (8);
 	}
-	return 0;
+	return (0);
 }
 /*
-int	main()
+int	main(void)
 {
 	char	char1 = 'r';
 	char	char2 = 'S';

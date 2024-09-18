@@ -14,7 +14,7 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t	index;
+	size_t		index;
 	const char	*buffer1;
 	char		*buffer2;
 
@@ -29,7 +29,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (buffer2);
 }
 /*
-int	main()
+int	main(void)
 {
 	char	*src = "Razan Srour";
 //	char	dest1[6];
@@ -42,10 +42,14 @@ int	main()
 //	ft_memcpy(dest3, src, 0);
 	memcpy(dest4, src, ft_strlen(src));
 
-//	printf("The memory copy from %s to dest1[6] and n = 6 is %s.\n", src, dest1);
-//	printf("The memory copy from %s to dest2[5] and n = 3 is %s.\n", src, dest2);
-//	printf("The memory copy from %s to dest3[0] and n = 0 is %s.\n", src, dest3);
-	printf("The memory copy from %s to dest4[12] and n = 11 is %s.\n", src, dest4);
+//	printf("The memory copy from %s to dest1[6] and n = 6 is %s.\n", src,
+		dest1);
+//	printf("The memory copy from %s to dest2[5] and n = 3 is %s.\n", src,
+		dest2);
+//	printf("The memory copy from %s to dest3[0] and n = 0 is %s.\n", src,
+		dest3);
+	printf("The memory copy from %s to dest4[12] and n = 11 is %s.\n", src,
+		dest4);
 
 	return (0);
 }*/

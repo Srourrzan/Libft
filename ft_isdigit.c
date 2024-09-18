@@ -6,23 +6,22 @@
 /*   By: rsrour <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 21:42:28 by rsrour            #+#    #+#             */
-/*   Updated: 2024/08/27 22:31:52 by rsrour           ###   ########.fr       */
+/*   Updated: 2024/09/16 16:44:45 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <ctype.h>
 
-int	ft_isdigit(char c)
+int	ft_isdigit(int c)
 {
-	if('0' <= c && '9' >= c)
+	if (c >= 48 && c <= 57)
 	{
-		return 2048; 
+		return (1);
 	}
-	return 0;
+	return (0);
 }
 /*
-int	main()
+int	main(void)
 {
 	char	char1 = 'r';
 	char	char2 = 'S';

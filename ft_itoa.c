@@ -1,15 +1,25 @@
-#include "libft.h"
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rsrour <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/16 18:03:06 by rsrour            #+#    #+#             */
+/*   Updated: 2024/09/16 18:03:17 by rsrour           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-static	size_t	numlen(int n)
+#include "libft.h"
+
+static size_t	numlen(int n)
 {
 	size_t	length;
 
 	length = 0;
 	if (n <= 0)
 	{
-//		printf("n <= 0, %d <= 0\n", n);
-		length++; //to count the minus sign incase of negative number, and to count the zero if the number is zero.
+		length++;
 	}
 	while (n)
 	{
@@ -35,27 +45,22 @@ char	*ft_itoa(int n)
 		buffer[0] = '-';
 		number = -number;
 	}
-//	printf("len_number = %ld\n", len_number);
-//	printf("Assigning the null terminator to the last placeholder in the buffer\n");
 	buffer[len_number--] = '\0';
-//	printf("len_number = %ld\n", len_number);
 	if (number == 0)
 		buffer[0] = '0';
 	while (number)
 	{
-//		printf("buffer[%ld] = %c\n", len_number, buffer[len_number]);
 		buffer[len_number--] = number % 10 + '0';
-//		printf("buffer[%ld] = %c\n", len_number + 1, buffer[len_number + 1]);
 		number /= 10;
 	}
 	return (buffer);
 }
 /*
-int	main()
+int	main(void)
 {
 	int	number = -45767016;
 
 	printf("The string rep of %d is %s\n", number, ft_itoa(number));
 
-	return 0;
+	return (0);
 }*/

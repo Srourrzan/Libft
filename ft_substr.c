@@ -6,38 +6,66 @@
 /*   By: rsrour <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 15:47:17 by rsrour            #+#    #+#             */
-/*   Updated: 2024/09/10 18:49:30 by rsrour           ###   ########.fr       */
+/*   Updated: 2024/09/16 17:10:10 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+Parameters
+----------
+		s: The string from which to create the substring.
+		start: The start index of the substring in the string 's'.
+		len: The maximum length of the substring.
+Return Value
+------------
+		The substring.
+		NULL if the allocation fails.
+External functions
+------------------
+		malloc
+Description
+-----------
+		Allocates (with malloc(3)) and returns a substring
+		from the string 's'.
+		The substring begins at index 'start' and is of
+		maximum size 'len'.
+*/
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
-	size_t	substr_len;
+	size_t	src_len;
 
-
-	substr_len = ft_strlen(s + start);
-	if (!s || !len || (start >= ft_strlen(s)))
+	src_len = ft_strlen(s);
+	if (!s)
+	{
 		return (NULL);
-	if (substr_len < len)
-		len = substr_len;
-	substr = (char *)malloc(sizeof(char) * (len + 1));
+	}
+	if (start > src_len)
+	{
+		return (ft_strdup(""));
+	}
+	if (src_len <= len)
+	{
+		len = src_len - start;
+	}
+	substr = malloc(sizeof(char) * (len + 1));
 	if (!substr)
-	return (NULL);
-	ft_strlcpy(substr, s, substr_len);
+		return (NULL);
+	ft_strlcpy(substr, s + start, len + 1);
 	return (substr);
-	
 }
 /*
-int	main()
+int	main(void)
 {
-	char		*name = "Razan Srour";
-	unsigned int	start = 3;
-	size_t		size_of_name = sizeof(name) - start;
+	// char		*name = "hola";
+	// unsigned int	start = 2;
+	// size_t		size_substr = 2;
 
-	printf("The substring of %s starting from %d of length %ld\n", name, start, size_of_name);
-	printf("is: %s\n", ft_substr(name, start, size_of_name));
+	// printf("The substring of %s starting from %d of length %ld\n",
+	// name, start, size_substr);
+	printf("is: %s\n", ft_substr("hola", 4294967295, 18446744073709551615));
 	return (0);
 }*/

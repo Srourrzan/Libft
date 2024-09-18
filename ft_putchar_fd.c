@@ -17,7 +17,7 @@ void	ft_putchar_fd(char c, int fd)
 	write(fd, &c, 1);
 }
 /*
-int	main()
+int	main(void)
 {
 	char	c = 'R';
 	int	fd = 1;

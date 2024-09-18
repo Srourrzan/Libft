@@ -6,73 +6,65 @@
 /*   By: rsrour <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 10:48:38 by rsrour            #+#    #+#             */
-/*   Updated: 2024/09/14 12:53:16 by rsrour           ###   ########.fr       */
+/*   Updated: 2024/09/16 17:54:36 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-static	int	ft_safe_malloc(char **words_vector, int current_position, size_t buffer_size)
-{
-	int	previous_position;
+/*
+Parameters
+----------
+		s: The string to be split.
+		c: The delimiter.
+Return Value
+------------
+		The array of new strings resulting from the split.
+		NULL if the allocation fails.
+External Functions
+------------------
+		malloc, free
+Description
+-----------
+		Allocates (with malloc(3)) and returns an array
+		of strings obtained by splitting 's' using the
+		character 'c' as a delimiter. The array must end
+		with a NULL pointer.
+*/
 
-	previous_position = 0;
-	words_vector[current_position] = (char *)malloc(sizeof(char) * buffer_size);
-	if (NULL == words_vector[current_position])
+static void	fillarr(char **arr, size_t len_arr, char const *s, char c)
+{
+	size_t	position;
+	size_t	len_word;
+
+	position = 0;
+	while (position < len_arr)
 	{
-		while (previous_position < current_position)
-			free(words_vector[previous_position]);
-		free(words_vector[previous_position]);
-		return 1;
+		len_word = 0;
+		while (*s == c && *s != 0)
+			s++;
+		while (s[len_word] != c && s[len_word] != '\0')
+			len_word++;
+		arr[position] = ft_substr(s, 0, len_word);
+		s += len_word;
+		position++;
 	}
-	return 0;
+	arr[position] = 0;
 }
 
-// return 0 if all mallocs went fine, otherwise 1
-static	int	ft_fill_words_vector(char **words_vector, char const *sentence, char seperator)
+static size_t	ft_count_words(char const *sentence, char seperator)
 {
-	size_t		length_of_word;
-	int		word_position;
+	size_t	counter;
+	bool	is_a_word;
 
-	word_position = 0;
+	counter = 0;
 	while (*sentence)
 	{
-		// printf("We are at word position = %d\n", word_position);
-		length_of_word = 0;
-		while(*sentence == seperator && sentence)
+		is_a_word = false;
+		while (*sentence == seperator && *sentence)
 			++sentence;
 		while (*sentence != seperator && *sentence)
 		{
-			// printf("found a character %s\n", sentence);
-			++length_of_word;
-			++sentence;
-		}
-		// printf("End of a word\n, have length of %ld\n", length_of_word);
-		if (length_of_word)
-		{
-			if (ft_safe_malloc(words_vector, word_position, length_of_word + 1))
-				return 1;
-		}
-		// printf("Memory allocation was done safely\n");
-		ft_strlcpy(words_vector[word_position], sentence - length_of_word, length_of_word + 1);
-		word_position++;
-	}
-	return 0;
-}
-
-static	size_t	ft_count_words(char const *sentence, char seperator)
-{
-	size_t		counter;
-	bool		is_a_word;
-
-	counter = 0;
-	while(*sentence)
-	{
-		is_a_word = false; //This will re-initialize the value of the boolean
-		while(*sentence == seperator && *sentence)
-			++sentence;
-		while(*sentence !=seperator && *sentence)
-		{
-			if(!is_a_word)//Check the beggining of a word.
+			if (!is_a_word)
 			{
 				is_a_word = true;
 				counter++;
@@ -80,40 +72,36 @@ static	size_t	ft_count_words(char const *sentence, char seperator)
 			++sentence;
 		}
 	}
-	return counter;
+	return (counter);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t		number_of_words;
-	char		**words_vector;
-	//size_t		iter;
+	size_t	number_of_words;
+	char	**words_vector;
 
-	//iter = 0;
-	if (NULL == s)
-		return NULL;
-	number_of_words = 0; //intialize the variable or there will be a grabage value.
-	number_of_words = ft_count_words(s, c); //this step is done to decide the size of the first dimension of the vector
-	// printf("Number of words found in the vector: %ld\n", number_of_words);
+	if (!s)
+		return (0);
+	number_of_words = ft_count_words(s, c);
 	words_vector = malloc(sizeof(char *) * (number_of_words + 1));
-	if (NULL == words_vector)
-		return NULL;
-	words_vector[number_of_words] = '\0'; //terminate the vector
-	if (ft_fill_words_vector(words_vector, s, c))
-		return NULL;
-	return words_vector;
+	if (!words_vector)
+	{
+		return (NULL);
+	}
+	fillarr(words_vector, number_of_words, s, c);
+	return (words_vector);
 }
 /*
-int	main()
+int	main(void)
 {
-	char	name[] = "Razan_Srour";
-	char	seperator = '_';
+	char const	*name = "   lorem   ipsum dolor";
+	char	seperator = ' ';
 	char	**splitted_name;
 
+	printf("Starting.. %c\n", seperator);
 	splitted_name = ft_split(name, seperator);
-	printf("The %s was seperated from %c into %s, %s\n", name ,seperator ,splitted_name[0], splitted_name[1]);
+	printf("The %s was seperated from %c into\n %s,\n %s\n",
+	name ,seperator ,splitted_name[0], splitted_name[1]);
 
-	return 42;
-
-}
-*/
+	return (42);
+}*/

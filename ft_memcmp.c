@@ -19,12 +19,12 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	if (n <= 0)
 		return (0);
 	i = 0;
-	while(((unsigned char *)s1)[i] == ((unsigned char *)s2)[i] && i < n - 1)
+	while (((unsigned char *)s1)[i] == ((unsigned char *)s2)[i] && i < n - 1)
 		i++;
 	return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
 }
 /*
-int	main()
+int	main(void)
 {
 	char	*str1 = "Razan";
 	char	*str2 = "Razan";
@@ -34,19 +34,31 @@ int	main()
 	char	*str6 = "ra6an";
 	int	n_bytes = 4;
 
-	printf("The memcmp between %s and %s for the first %d bytes is %d\n", str1, str2, n_bytes, memcmp(str1, str2, n_bytes));
-	printf("The memcmp between %s and %s for the first %d bytes is %d\n", str1, str3, n_bytes, memcmp(str1, str3, n_bytes));
-        printf("The memcmp between %s and %s for the first %d bytes is %d\n", str1, str4, n_bytes, memcmp(str1, str4, n_bytes));
-        printf("The memcmp between %s and %s for the first %d bytes is %d\n", str1, str5, n_bytes, memcmp(str1, str5, n_bytes));
-        printf("The memcmp between %s and %s for the first %d bytes is %d\n", str1, str6, n_bytes, memcmp(str1, str6, n_bytes));
-        printf("The memcmp between %s and %s for the first %d bytes is %d\n", str3, str6, n_bytes, memcmp(str3, str6, n_bytes));
+	printf("The memcmp between %s and %s for the first %d bytes is %d\n", str1,
+		str2, n_bytes, memcmp(str1, str2, n_bytes));
+	printf("The memcmp between %s and %s for the first %d bytes is %d\n", str1,
+		str3, n_bytes, memcmp(str1, str3, n_bytes));
+		printf("The memcmp between %s and %s for the first %d bytes is %d\n",
+			str1, str4, n_bytes, memcmp(str1, str4, n_bytes));
+		printf("The memcmp between %s and %s for the first %d bytes is %d\n",
+			str1, str5, n_bytes, memcmp(str1, str5, n_bytes));
+		printf("The memcmp between %s and %s for the first %d bytes is %d\n",
+			str1, str6, n_bytes, memcmp(str1, str6, n_bytes));
+		printf("The memcmp between %s and %s for the first %d bytes is %d\n",
+			str3, str6, n_bytes, memcmp(str3, str6, n_bytes));
 	printf("=========================\n");
-        printf("The memcmp between %s and %s for the first %d bytes is %d\n", str1, str2, n_bytes, ft_memcmp(str1, str2, n_bytes));
-        printf("The memcmp between %s and %s for the first %d bytes is %d\n", str1, str3, n_bytes, ft_memcmp(str1, str3, n_bytes));
-        printf("The memcmp between %s and %s for the first %d bytes is %d\n", str1, str4, n_bytes, ft_memcmp(str1, str4, n_bytes));
-        printf("The memcmp between %s and %s for the first %d bytes is %d\n", str1, str5, n_bytes, ft_memcmp(str1, str5, n_bytes));
-        printf("The memcmp between %s and %s for the first %d bytes is %d\n", str1, str6, n_bytes, ft_memcmp(str1, str6, n_bytes));
-        printf("The memcmp between %s and %s for the first %d bytes is %d\n", str3, str6, n_bytes, ft_memcmp(str3, str6, n_bytes));
+		printf("The memcmp between %s and %s for the first %d bytes is %d\n",
+			str1, str2, n_bytes, ft_memcmp(str1, str2, n_bytes));
+		printf("The memcmp between %s and %s for the first %d bytes is %d\n",
+			str1, str3, n_bytes, ft_memcmp(str1, str3, n_bytes));
+		printf("The memcmp between %s and %s for the first %d bytes is %d\n",
+			str1, str4, n_bytes, ft_memcmp(str1, str4, n_bytes));
+		printf("The memcmp between %s and %s for the first %d bytes is %d\n",
+			str1, str5, n_bytes, ft_memcmp(str1, str5, n_bytes));
+		printf("The memcmp between %s and %s for the first %d bytes is %d\n",
+			str1, str6, n_bytes, ft_memcmp(str1, str6, n_bytes));
+		printf("The memcmp between %s and %s for the first %d bytes is %d\n",
+			str3, str6, n_bytes, ft_memcmp(str3, str6, n_bytes));
 
 	return (0);
 }*/

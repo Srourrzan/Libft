@@ -6,11 +6,30 @@
 /*   By: rsrour <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 19:55:36 by rsrour            #+#    #+#             */
-/*   Updated: 2024/09/10 14:54:16 by rsrour           ###   ########.fr       */
+/*   Updated: 2024/09/16 15:22:28 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+Parameters
+----------
+		s1: The prefix string.
+		s2: The prefix string.
+Return value
+------------
+		The new string.
+		NULL is the allocation fails.
+External functions
+------------------
+		malloc
+Description
+-----------
+		Allocates (with malloc(3)) and returns a new
+		string, which is the result of the
+		concatenation of 's1' and 's2'.
+*/
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -24,17 +43,15 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (ft_strdup(s1));
 	if (!s1 && s2)
 		return (ft_strdup(s2));
-	len_s1 = ft_strlen(s1) + 1;
-	len_s2 = ft_strlen(s2) + 1;
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
 	joined_str = (char *)malloc(sizeof(char) * (len_s1 + len_s2 + 1));
 	if (!joined_str)
 		return (NULL);
-	ft_strlcpy(joined_str, s1, len_s1);
-	ft_strlcat(joined_str, s2, len_s2);
+	ft_strlcpy(joined_str, s1, len_s1 + 1);
+	ft_strlcat(joined_str, s2, len_s1 + len_s2 + 1);
 	return (joined_str);
-
 }
-
 
 /*
 char	*ft_strjoin(char const *s1, char const *s2)
@@ -59,12 +76,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (dest);
 }
 
-int	main()
+int	main(void)
 {
 	char	name1[] = "Razan";
 	char	name2[] = "_Srour";
 
-	printf("The join of %s and %s is %s\n", name1, name2, ft_strjoin(name1, name2));
+	printf("The join of %s and %s is %s\n", name1, name2, ft_strjoin(name1,
+			name2));
 	return (0);
 }
 */

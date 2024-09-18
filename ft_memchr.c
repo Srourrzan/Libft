@@ -18,7 +18,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	*mem;
 
 	mem = (unsigned char *)s;
-
 	while (n--)
 	{
 		if (*mem == (unsigned char)c)
@@ -28,7 +27,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	return (NULL);
 }
 /*
-int	main()
+int	main(void)
 {
 	const char *str = "tutorialspoint.com";
 	const char ch = '.';

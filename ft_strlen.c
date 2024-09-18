@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <string.h>
 
 size_t	ft_strlen(const char *s)
 {
@@ -20,10 +19,10 @@ size_t	ft_strlen(const char *s)
 	length = 0;
 	while (s[length] != '\0')
 		length++;
-	return length;
+	return (length);
 }
 /*
-int	main()
+int	main(void)
 {
 	char	src[] = "Razan Srour";
 

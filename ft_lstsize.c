@@ -15,13 +15,13 @@
 /*
 Parameters
 ----------
-        lst:    The beginning of the list.
+		lst:    The beginning of the list.
 Return
 ------
-        The length of the list.
+		The length of the list.
 Description
 -----------
-        Counts the number of nodes in a list.
+		Counts the number of nodes in a list.
 */
 int	ft_lstsize(t_list *lst)
 {
@@ -38,13 +38,13 @@ int	ft_lstsize(t_list *lst)
 	return (counter);
 }
 /*
-int     main()
+int	main(void)
 {
-    t_list  *root = ft_lstnew("Razan");
-    t_list  *elem1 = ft_lstnew("Srour");
+	t_list  *root = ft_lstnew("Razan");
+	t_list  *elem1 = ft_lstnew("Srour");
 
-    ft_lstadd_back(&root, elem1);
-    printf("NUmber of nodes in the list is
-    %d\n", ft_lstsize(root));
-    return 42;
+	ft_lstadd_back(&root, elem1);
+	printf("NUmber of nodes in the list is
+	%d\n", ft_lstsize(root));
+	return (42);
 }*/

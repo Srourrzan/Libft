@@ -12,14 +12,13 @@
 
 #include "libft.h"
 
-void    ft_putchar_fd(char c, int fd);
+void	ft_putchar_fd(char c, int fd);
 
 void	ft_putnbr_fd(int n, int fd)
 {
 	int	sign;
 
 	sign = 0;
-//	printf("n = %d\n", n);
 	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
@@ -27,25 +26,22 @@ void	ft_putnbr_fd(int n, int fd)
 		{
 			sign = 1;
 			n++;
-//			printf("n = %d\n", n);
 		}
 		n = -n;
-//		printf("n = %d\n", n);
 	}
 	if (n > 9)
 	{
-//		printf("n / 10 = %d\n", n / 10);
 		ft_putnbr_fd(n / 10, fd);
 	}
-//	printf("n mod 10 + '0' + %d = %d\n", sign, n % 10 + '0' + sign);
 	ft_putchar_fd(n % 10 + '0' + sign, fd);
 }
 /*
-int	main()
+int	main(void)
 {
-	int	n = -576;
-	ft_putnbr_fd(n, 1);
+	int	n;
 
-	return 0;
+	n = -576;
+	ft_putnbr_fd(n, 1);
+	return (0);
 }
 */

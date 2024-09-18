@@ -11,19 +11,19 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+
 //#include <ctype.h>
 
 int	ft_isalpha(int c)
 {
-	if(('a' <= c && 'z' >= c) || ('A' <= c && 'Z' >= c))
+	if (('a' <= c && 'z' >= c) || ('A' <= c && 'Z' >= c))
 	{
 		return (1024);
 	}
 	return (0);
-
 }
 /*
-int	main()
+int	main(void)
 {
 	char	char1 = 'c';
 	char	char2 = 'V';

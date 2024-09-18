@@ -15,41 +15,41 @@
 /*
 Parameters
 ----------
-        lst: The beginning of the list.
+		lst: The beginning of the list.
 Return
 ------
-        Last node of the list.
+		Last node of the list.
 Description
 -----------
-        Returns the last node of the list.
+		Returns the last node of the list.
 */
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list		*last;
+	t_list	*last;
 
 	if (lst == NULL)
 		return (NULL);
 	while (lst)
 	{
 		last = lst;
-		lst = lst -> next;
+		lst = lst->next;
 	}
 	return (last);
 }
 /*
-int     main()
+int	main(void)
 {
-    t_list  *root = ft_lstnew("Razan");
-    t_list  *elem1 = ft_lstnew("Srour");
-    t_list  *elem2 = ft_lstnew("The");
+	t_list  *root = ft_lstnew("Razan");
+	t_list  *elem1 = ft_lstnew("Srour");
+	t_list  *elem2 = ft_lstnew("The");
 
-    ft_lstadd_back(&root, elem1);
-    ft_lstadd_back(&root, elem2);
+	ft_lstadd_back(&root, elem1);
+	ft_lstadd_back(&root, elem2);
 
-    printf("NUmber of nodes in the list is %d\n", 
-    ft_lstsize(root));
-    t_list *last_element = ft_lstlast(root);
-    printf("The last node in the list is %s\n", 
-    (char *)last_element->content);
-    return 42;
+	printf("NUmber of nodes in the list is %d\n",
+	ft_lstsize(root));
+	t_list *last_element = ft_lstlast(root);
+	printf("The last node in the list is %s\n",
+	(char *)last_element->content);
+	return (42);
 }*/

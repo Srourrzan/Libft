@@ -17,11 +17,11 @@ char	*ft_strdup(const char *s1)
 {
 	char	*dup_str;
 	size_t	len;
-	int	iter;
+	int		iter;
 
 	iter = 0;
 	len = ft_strlen(s1);
-	dup_str = (char *)malloc((len + 1) *  sizeof(char));
+	dup_str = (char *)malloc((len + 1) * sizeof(char));
 	if (!dup_str)
 		return (NULL);
 	while (s1[iter] != '\0')
@@ -34,10 +34,10 @@ char	*ft_strdup(const char *s1)
 }
 
 /*
-int	main()
+int	main(void)
 {
 	char	*name = "Razan Srour";
-	
+
 	printf("The duplicate of %s is %s\n", name, ft_strdup(name));
 	return (0);
 }*/

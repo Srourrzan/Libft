@@ -12,36 +12,23 @@
 
 #include <stdio.h>
 
-/*
-void    ft_test(unsigned int i, char *str)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-        printf("inside the ft_test.\n");
-        printf("passed parameters: %d, %d\n", i, *str);
-        *str = 'A' ;
-	//str++;
-        printf("After summation: %d, %d\n", i, *str);
-	//
-}
-*/
-
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
-{
-	size_t		iter;
+	size_t	iter;
 
 	iter = 0;
-	if(!s || !f)
+	if (!s || !f)
 		return ;
-	while(s[iter])
+	while (s[iter])
 	{
-		//printf("s + %ld = %s\n", iter, (s + iter));
-		f(iter, (s+iter));
+		f(iter, (s + iter));
 		iter++;
 	}
 	return ;
 }
 
 /*
-int	main()
+int	main(void)
 {
 	char	name[] = "Razan Srour";
 

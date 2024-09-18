@@ -15,12 +15,12 @@
 /*
 Parameters
 ----------
-        lst: The address of a pointer to a node.
-        f: The address of the function used to iterate on the list.
+		lst: The address of a pointer to a node.
+		f: The address of the function used to iterate on the list.
 Description
 -----------
-        Iterates the list 'lst' and applies the function 'f' 
-        on the content of each node.
+		Iterates the list 'lst' and applies the function 'f'
+		on the content of each node.
 */
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
@@ -29,41 +29,42 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		return ;
 	while (lst)
 	{
-		f(lst -> content);
+		f(lst->content);
 		lst = lst->next;
 	}
 }
 /*
-void    f(void *content)
+void	f(void *content)
 {
-    content += 1;
+	content += 1;
 }
 
-int     main()
+int	main(void)
 {
-    t_list  *root = ft_lstnew("Razan");
-    t_list  *elem1 = ft_lstnew("Srour");
-    t_list  *elem2 = ft_lstnew("The");
+	t_list	*root;
+	t_list	*elem1;
+	t_list	*elem2;
+	t_list	*curr;
 
-    ft_lstadd_back(&root, elem1);
-    ft_lstadd_back(&root, elem2);
-
-    t_list  *curr = root;
-    while(curr != NULL)
-    {
-        printf("%s\n", (char *)curr->content);
-        curr = curr->next;
-    }
-
-    printf("Applying a function to the list...\n");
-    ft_lstiter(root, f);
-    curr = root;
-    while(curr != NULL)
-    {
-        printf("%s\n", (char *)curr->content);
-        curr = curr->next;
-    }
-
-    return 42;
+	root = ft_lstnew("Razan");
+	elem1 = ft_lstnew("Srour");
+	elem2 = ft_lstnew("The");
+	ft_lstadd_back(&root, elem1);
+	ft_lstadd_back(&root, elem2);
+	curr = root;
+	while(curr != NULL)
+	{
+		printf("%s\n", (char *)curr->content);
+		curr = curr->next;
+	}
+	printf("Applying a function to the list...\n");
+	ft_lstiter(root, f);
+	curr = root;
+	while(curr != NULL)
+	{
+		printf("%s\n", (char *)curr->content);
+		curr = curr->next;
+	}
+	return (42);
 }
 */

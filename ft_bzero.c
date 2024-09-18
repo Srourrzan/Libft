@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+
 //#include <strings.h>
 
 void	ft_bzero(void *s, size_t n)
@@ -25,7 +26,7 @@ void	ft_bzero(void *s, size_t n)
 	}
 }
 /*
-int	main()
+int	main(void)
 {
 	char	str[50] = "GeeksForGeeks is for programming geeks.";
 	printf("\nBefore bzero(): %s\n", str);
@@ -34,5 +35,5 @@ int	main()
 	ft_bzero(str + 20, 8*sizeof(char));
 
 	printf("After bzero(): %s\n", str);
-	return 0;
+	return (0);
 }*/
