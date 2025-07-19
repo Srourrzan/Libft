@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsrour <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: rsrour <rsrour@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 21:33:54 by rsrour            #+#    #+#             */
-/*   Updated: 2024/09/16 18:23:40 by rsrour           ###   ########.fr       */
+/*   Updated: 2025/07/19 18:08:23 by rsrour           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <ctype.h>
@@ -47,7 +48,7 @@ int					ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 void				ft_putchar_fd(char c, int fd);
-void				ft_putstr_fd(char *s, int fd);
+void				ft_putstr_fd(const char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 void				ft_putendl_fd(char *s, int fd);
